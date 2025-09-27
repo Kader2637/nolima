@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="id" data-theme="light">
 <head>
@@ -7,14 +6,16 @@
   <title>Artikel — Nolima</title>
   <meta name="description" content="Baca artikel lengkap dari Nolima.">
   <link rel="icon" href="https://picsum.photos/seed/nolima-fav/64/64">
-  
-    <meta property="og:title" content="Artikel — Nolima" />
-    <meta property="og:description" content="Baca artikel lengkap dari Nolima." />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Nolima" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1520975922284-7b6834f04a41?q=80&w=1200&auto=format&fit=crop" />
-    <meta name="twitter:card" content="summary_large_image">
-    
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Artikel — Nolima" />
+  <meta property="og:description" content="Baca artikel lengkap dari Nolima." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nolima" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1520975922284-7b6834f04a41?q=80&w=1600&auto=format&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -23,127 +24,305 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            base: '#0E0E10',
-            accent: '#BFA27A',
-            neutral: '#F7F7F7'
-          },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            serif: ['Playfair Display', 'ui-serif']
-          }
+          colors: { base:'#0E0E10', accent:'#BFA27A', neutral:'#F7F7F7' },
+          fontFamily: { sans:['Inter','ui-sans-serif','system-ui'], serif:['Playfair Display','ui-serif'] },
+          boxShadow: { 'soft':'0 10px 30px -10px rgba(0,0,0,.15)' }
         }
       },
-      darkMode: ['class', '[data-theme="dark"]']
+      darkMode: ['class','[data-theme="dark"]']
     }
   </script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Nolima", "url": "https://example.com", "logo": "https://picsum.photos/seed/nolima/200/200", "sameAs": ["https://instagram.com/", "https://tiktok.com/"]}</script>
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Nolima",
+    "url":"https://example.com",
+    "logo":"https://picsum.photos/seed/nolima/200/200",
+    "sameAs":["https://instagram.com/","https://tiktok.com/"]
+  }</script>
+
+  <style>
+    /* progres baca tipis di paling atas */
+    #readProgress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 60; background: #BFA27A; }
+    /* anchor offset untuk header sticky */
+    .anchor-offset { scroll-margin-top: 90px; }
+  </style>
 </head>
-<body class="bg-neutral text-base font-sans text-base/relaxed text-zinc-800 selection:bg-accent/20 selection:text-base">
 
-<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-zinc-200">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6">
-    <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-2" aria-label="Nolima Home">
-        <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
-        <span class="font-serif text-xl tracking-wide">Nolima</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-1" aria-label="Utama">
-        <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Beranda</a>
-<a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Koleksi</a>
-<a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Lookbook</a>
-<a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Tentang</a>
-<a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Testimoni</a>
-<a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 bg-accent/15 text-base">Blog</a>
-<a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">FAQ</a>
-<a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Kontak</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-base text-white px-4 py-2 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
-          <span class="sr-only">Chat WhatsApp</span>
-          <span>Chat WhatsApp</span>
+<body class="min-h-screen flex flex-col bg-neutral text-base font-sans text-base/relaxed text-zinc-800 selection:bg-accent/20 selection:text-base">
+
+  <!-- Progress bar -->
+  <div id="readProgress"></div>
+
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-zinc-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Nolima Home">
+          <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
+          <span class="font-serif text-xl tracking-wide">Nolima</span>
         </a>
-        <button id="themeToggle" class="rounded-xl border px-3 py-2 hover:bg-zinc-100" aria-label="Toggle dark mode">🌓</button>
+        <nav class="hidden md:flex items-center gap-1" aria-label="Utama">
+          <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Beranda</a>
+          <a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Koleksi</a>
+          <a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Lookbook</a>
+          <a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Tentang</a>
+          <a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Testimoni</a>
+          <a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium bg-accent/15 text-base">Blog</a>
+          <a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">FAQ</a>
+          <a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Kontak</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-base text-white px-4 py-2 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
+            <span class="sr-only">Chat WhatsApp</span>
+            <span>Chat WhatsApp</span>
+          </a>
+          <button id="themeToggle" class="rounded-xl border px-3 py-2 hover:bg-zinc-100" aria-label="Toggle dark mode">🌓</button>
+        </div>
+        <button id="menuBtn" class="md:hidden rounded-xl border p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka menu">☰</button>
       </div>
-      <button id="menuBtn" class="md:hidden rounded-xl border p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka menu">☰</button>
     </div>
-  </div>
-  <div id="mobileMenu" class="md:hidden hidden border-t border-zinc-200">
-    <nav class="mx-auto max-w-7xl px-4 sm:px-6 py-3 grid grid-cols-2 gap-2" aria-label="Menu Mobile">
-      <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Beranda</a>
-<a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Koleksi</a>
-<a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Lookbook</a>
-<a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Tentang</a>
-<a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Testimoni</a>
-<a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 bg-accent/15 text-base">Blog</a>
-<a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">FAQ</a>
-<a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Kontak</a>
-      <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="col-span-2 inline-flex items-center justify-center gap-2 rounded-xl bg-base text-white px-4 py-2">Chat WhatsApp</a>
-    </nav>
-  </div>
-</header>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-zinc-200">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 py-3 grid grid-cols-2 gap-2" aria-label="Menu Mobile">
+        <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Beranda</a>
+        <a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Koleksi</a>
+        <a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Lookbook</a>
+        <a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Tentang</a>
+        <a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Testimoni</a>
+        <a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium bg-accent/15 text-base">Blog</a>
+        <a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">FAQ</a>
+        <a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Kontak</a>
+        <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="col-span-2 inline-flex items-center justify-center gap-2 rounded-xl bg-base text-white px-4 py-2">Chat WhatsApp</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="mx-auto max-w-3xl px-4 sm:px-6 mt-10">
-  <article class="prose prose-zinc max-w-none">
-    <h1>Membangun Wardrobe Elegan Sehari-hari</h1>
-    <p>Tips sederhana untuk padu padan elegan nan nyaman.</p>
-    <h2>1. Palet Netral</h2>
-    <p>Pilih warna dasar seperti hitam, putih, dan beige.</p>
-    <h2>2. Potongan Rapi</h2>
-    <p>Prioritaskan fit yang proporsional.</p>
-    <h2>3. Material Nyaman</h2>
-    <p>Katun dan rayon untuk cuaca tropis.</p>
-  </article>
-  <div class="mt-8 flex items-center gap-2">
-    <span>Bagikan:</span>
-    <a aria-label="Bagikan ke X" href="#" class="rounded-full border px-3 py-1">X</a>
-    <a aria-label="Bagikan ke Facebook" href="#" class="rounded-full border px-3 py-1">Facebook</a>
-  </div>
-</section>
-
-<footer class="mt-24 border-t border-zinc-200 bg-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-12 grid gap-8 md:grid-cols-4">
-    <div>
-      <div class="flex items-center gap-2">
-        <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
-        <span class="font-serif text-lg">Nolima</span>
+  <!-- HERO -->
+  <section class="relative">
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=2000&auto=format&fit=crop"
+         alt="Editorial Nolima" class="h-[36vh] w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-4xl px-4">
+      <nav class="text-white/80 text-xs mb-2" aria-label="breadcrumb">
+        <a href="index.html" class="hover:underline">Beranda</a> / <a href="blog.html" class="hover:underline">Blog</a> / <span>Artikel</span>
+      </nav>
+      <h1 class="font-serif text-white text-3xl md:text-4xl drop-shadow">Membangun Wardrobe Elegan Sehari-hari</h1>
+      <div class="mt-2 flex flex-wrap items-center gap-3 text-white/90 text-sm">
+        <span>27 Sep 2025</span>
+        <span>•</span>
+        <span>7 menit baca</span>
+        <span class="inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-xs">#gaya</span>
+        <span class="inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-xs">#tips</span>
       </div>
-      <p class="mt-3 text-sm text-zinc-600">Elegansi yang Tahan Waktu.</p>
     </div>
-    <div>
-      <h3 class="font-semibold mb-2">Navigasi</h3>
-      <ul class="space-y-1 text-sm">
-        <li><a class="hover:underline" href="koleksi.html">Koleksi</a></li>
-        <li><a class="hover:underline" href="lookbook.html">Lookbook</a></li>
-        <li><a class="hover:underline" href="tentang.html">Tentang</a></li>
-        <li><a class="hover:underline" href="faq.html">FAQ</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-semibold mb-2">Sosial</h3>
-      <ul class="space-y-1 text-sm">
-        <li><a class="hover:underline" aria-label="Instagram" href="#">Instagram</a></li>
-        <li><a class="hover:underline" aria-label="TikTok" href="#">TikTok</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-semibold mb-2">Newsletter</h3>
-      <form class="flex gap-2" onsubmit="event.preventDefault(); toast('Terima kasih!');">
-        <input type="email" aria-label="Email" placeholder="email@contoh.com" class="w-full rounded-xl border px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
-        <button class="rounded-xl bg-accent/90 px-3 py-2 text-white">Daftar</button>
-      </form>
-    </div>
-  </div>
-  <div class="text-center text-xs text-zinc-500 py-4 border-t">© <span id="year">2025</span> Nolima. Semua hak dilindungi.</div>
-</footer>
+  </section>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" 
-  class="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
-  aria-label="Chat WhatsApp">
-  ☎
-</a>
+  <!-- MAIN -->
+  <main class="flex-1">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 py-10 grid lg:grid-cols-[1fr_280px] gap-10">
+      <!-- Article -->
+      <article class="max-w-3xl">
+        <p class="text-lg text-zinc-700">Elegansi itu sederhana—dan bisa dipakai sehari-hari. Artikel ini merangkum prinsip kunci untuk membangun wardrobe yang tahan lama, mudah dipadu, dan terasa nyaman di iklim tropis.</p>
 
-<script src="assets/js/main.js"></script>
+        <!-- Callout -->
+        <div class="mt-6 rounded-2xl border bg-white p-5 shadow-soft">
+          <p class="text-sm"><strong>Quick win:</strong> mulai dari <em>3 item inti</em> — kemeja putih rapi, celana bahan hitam, outer netral. Tiga ini sudah cukup untuk 9+ kombinasi.</p>
+        </div>
+
+        <h2 id="palet" class="anchor-offset font-serif text-2xl mt-10">1. Palet Netral</h2>
+        <p>Pilih warna dasar seperti <strong>hitam</strong>, <strong>putih</strong>, dan <strong>beige</strong>. Palet ini memudahkan mix-and-match dan terlihat mewah tanpa usaha berlebih.</p>
+        <figure class="my-6 rounded-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1600&auto=format&fit=crop" alt="Palet netral" class="w-full">
+          <figcaption class="text-xs text-zinc-500 mt-2">Tiga warna aman: hitam, putih, beige.</figcaption>
+        </figure>
+
+        <h2 id="fit" class="anchor-offset font-serif text-2xl mt-10">2. Potongan Rapi</h2>
+        <p>Prioritaskan <em>fit</em> yang proporsional: bahu pas, lengan tidak kepanjangan, panjang celana menyentuh punggung sepatu.</p>
+        <blockquote class="my-6 border-l-4 border-accent pl-4 italic text-zinc-700">
+          “Fit yang baik membuat busana terjangkau terlihat premium.”
+        </blockquote>
+
+        <h2 id="material" class="anchor-offset font-serif text-2xl mt-10">3. Material Nyaman</h2>
+        <p>Untuk cuaca tropis, andalkan <strong>katun</strong> dan <strong>rayon</strong>—sejuk, menyerap, dan mudah dirawat.</p>
+        <ul class="list-disc pl-6 mt-3">
+          <li>Katun combed: halus & breathable.</li>
+          <li>Rayon: jatuh cantik, terasa dingin.</li>
+          <li>Campuran sedikit elastane: gerak lebih leluasa.</li>
+        </ul>
+
+        <h2 id="kombinasi" class="anchor-offset font-serif text-2xl mt-10">4. Rumus Kombinasi Cepat</h2>
+        <p>Gunakan rumus <strong>3-1-1</strong>: 3 netral + 1 statement tipis + 1 aksesori fungsional (jam/sabuk).</p>
+        <div class="mt-6 grid sm:grid-cols-3 gap-4">
+          <div class="rounded-2xl bg-white p-4 border">
+            <p class="font-medium">Kasual rapih</p>
+            <p class="text-sm text-zinc-600 mt-1">Kaos putih • Celana hitam • Outer beige</p>
+          </div>
+          <div class="rounded-2xl bg-white p-4 border">
+            <p class="font-medium">Kerja ringan</p>
+            <p class="text-sm text-zinc-600 mt-1">Kemeja putih • Chino hitam • Loafers</p>
+          </div>
+          <div class="rounded-2xl bg-white p-4 border">
+            <p class="font-medium">Kopi sore</p>
+            <p class="text-sm text-zinc-600 mt-1">Tank top • Overshirt • Celana bahan</p>
+          </div>
+        </div>
+
+        <!-- CTA WhatsApp -->
+        <div class="mt-10 rounded-3xl bg-base text-white p-6 flex items-center justify-between gap-4">
+          <div>
+            <p class="font-serif text-xl">Butuh saran styling pribadi?</p>
+            <p class="text-white/80 text-sm">Tanya tim Nolima—gratis konsultasi ukuran.</p>
+          </div>
+          <a href="https://wa.me/62812XXXXXXX?text=Halo%20Nolima%2C%20mohon%20saran%20styling%20untuk%20wardrobe%20saya"
+             target="_blank" rel="noopener"
+             class="rounded-xl bg-white text-base px-4 py-2">Chat WhatsApp</a>
+        </div>
+
+        <!-- Newsletter CTA -->
+        <div class="mt-10 rounded-3xl border bg-white p-6 shadow-soft">
+          <p class="font-medium">Gabung newsletter Nolima</p>
+          <p class="text-sm text-zinc-600">Dapatkan artikel & rilis koleksi terbaru.</p>
+          <form class="mt-3 flex gap-2" onsubmit="event.preventDefault(); toast('Terima kasih!');">
+            <input type="email" required placeholder="email@contoh.com" class="w-full rounded-xl border px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
+            <button class="rounded-xl bg-accent/90 px-3 py-2 text-white">Daftar</button>
+          </form>
+        </div>
+
+        <!-- Share -->
+        <div class="mt-8 flex flex-wrap items-center gap-2 text-sm">
+          <span class="text-zinc-600">Bagikan:</span>
+          <a aria-label="Bagikan ke X" href="#" class="rounded-full border px-3 py-1">X</a>
+          <a aria-label="Bagikan ke Facebook" href="#" class="rounded-full border px-3 py-1">Facebook</a>
+          <button id="copyLink" class="rounded-full border px-3 py-1">Salin Link</button>
+        </div>
+      </article>
+
+      <!-- TOC -->
+      <aside class="lg:sticky top-24 h-max">
+        <div class="rounded-2xl border bg-white p-4 shadow-soft">
+          <p class="font-semibold mb-2">Daftar Isi</p>
+          <ol class="space-y-2 text-sm">
+            <li><a href="#palet" class="toc-link hover:underline">1. Palet Netral</a></li>
+            <li><a href="#fit" class="toc-link hover:underline">2. Potongan Rapi</a></li>
+            <li><a href="#material" class="toc-link hover:underline">3. Material Nyaman</a></li>
+            <li><a href="#kombinasi" class="toc-link hover:underline">4. Rumus Kombinasi Cepat</a></li>
+          </ol>
+        </div>
+
+        <!-- Related posts -->
+        <div class="rounded-2xl border bg-white p-4 shadow-soft mt-6">
+          <p class="font-semibold mb-2">Baca Juga</p>
+          <div class="space-y-3">
+            <a href="artikel.html" class="block group">
+              <div class="flex gap-3">
+                <img src="https://picsum.photos/seed/rel1/96/96" alt="Artikel terkait" class="h-16 w-16 rounded-xl object-cover">
+                <div>
+                  <p class="font-medium group-hover:underline">Cara Memilih Kemeja Putih</p>
+                  <p class="text-xs text-zinc-600">4 menit baca</p>
+                </div>
+              </div>
+            </a>
+            <a href="artikel.html" class="block group">
+              <div class="flex gap-3">
+                <img src="https://picsum.photos/seed/rel2/96/96" alt="Artikel terkait" class="h-16 w-16 rounded-xl object-cover">
+                <div>
+                  <p class="font-medium group-hover:underline">Outer Netral untuk Segala Cuaca</p>
+                  <p class="text-xs text-zinc-600">5 menit baca</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-12 grid gap-8 md:grid-cols-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
+          <span class="font-serif text-lg">Nolima</span>
+        </div>
+        <p class="mt-3 text-sm text-zinc-600">Elegansi yang Tahan Waktu.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Navigasi</h3>
+        <ul class="space-y-1 text-sm">
+          <li><a class="hover:underline" href="koleksi.html">Koleksi</a></li>
+          <li><a class="hover:underline" href="lookbook.html">Lookbook</a></li>
+          <li><a class="hover:underline" href="tentang.html">Tentang</a></li>
+          <li><a class="hover:underline" href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Sosial</h3>
+        <ul class="space-y-1 text-sm">
+          <li><a class="hover:underline" aria-label="Instagram" href="#">Instagram</a></li>
+          <li><a class="hover:underline" aria-label="TikTok" href="#">TikTok</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Newsletter</h3>
+        <form class="flex gap-2" onsubmit="event.preventDefault(); toast('Terima kasih!');">
+          <input type="email" aria-label="Email" placeholder="email@contoh.com" class="w-full rounded-xl border px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
+          <button class="rounded-xl bg-accent/90 px-3 py-2 text-white">Daftar</button>
+        </form>
+      </div>
+    </div>
+    <div class="text-center text-xs text-zinc-500 py-4 border-t">© <span id="year">2025</span> Nolima. Semua hak dilindungi.</div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima"
+     target="_blank" rel="noopener"
+     class="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+     aria-label="Chat WhatsApp">☎</a>
+
+  <!-- Site interactions -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Progress bar
+    (function(){
+      const bar = document.getElementById('readProgress');
+      const main = document.querySelector('main');
+      const update = () => {
+        const h = document.documentElement;
+        const scrolled = h.scrollTop || document.body.scrollTop;
+        const height = (h.scrollHeight - h.clientHeight);
+        const pct = height ? (scrolled / height) * 100 : 0;
+        bar.style.width = pct + '%';
+      };
+      document.addEventListener('scroll', update, {passive:true});
+      update();
+    })();
+
+    // Salin link
+    const copyBtn = document.getElementById('copyLink');
+    if (copyBtn) copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        window.toast ? window.toast('Link disalin!') : alert('Link disalin!');
+      } catch(e) { alert('Gagal menyalin'); }
+    });
+
+    // Highlight TOC saat scroll
+    const sections = [...document.querySelectorAll('h2.anchor-offset')];
+    const tocLinks = [...document.querySelectorAll('.toc-link')];
+    const byId = id => tocLinks.find(a => a.getAttribute('href') === '#' + id);
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          tocLinks.forEach(a => a.classList.remove('text-base'));
+          const active = byId(e.target.id);
+          if (active) active.classList.add('text-base');
+        }
+      })
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
+    sections.forEach(s => obs.observe(s));
+  </script>
 </body>
 </html>
