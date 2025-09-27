@@ -1,0 +1,307 @@
+
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beranda — Nolima</title>
+  <meta name="description" content="Elegansi yang tahan waktu dari Nolima.">
+  <link rel="icon" href="https://picsum.photos/seed/nolima-fav/64/64">
+  
+    <meta property="og:title" content="Beranda — Nolima" />
+    <meta property="og:description" content="Elegansi yang tahan waktu dari Nolima." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nolima" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1520975922284-7b6834f04a41?q=80&w=1200&auto=format&fit=crop" />
+    <meta name="twitter:card" content="summary_large_image">
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: '#0E0E10',
+            accent: '#BFA27A',
+            neutral: '#F7F7F7'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            serif: ['Playfair Display', 'ui-serif']
+          }
+        }
+      },
+      darkMode: ['class', '[data-theme="dark"]']
+    }
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Nolima", "url": "https://example.com", "logo": "https://picsum.photos/seed/nolima/200/200", "sameAs": ["https://instagram.com/", "https://tiktok.com/"]}</script>
+</head>
+<body class="bg-neutral text-base font-sans text-base/relaxed text-zinc-800 selection:bg-accent/20 selection:text-base">
+
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-zinc-200">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2" aria-label="Nolima Home">
+        <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
+        <span class="font-serif text-xl tracking-wide">Nolima</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-1" aria-label="Utama">
+        <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 bg-accent/15 text-base">Beranda</a>
+<a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Koleksi</a>
+<a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Lookbook</a>
+<a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Tentang</a>
+<a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Testimoni</a>
+<a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Blog</a>
+<a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">FAQ</a>
+<a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Kontak</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-base text-white px-4 py-2 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
+          <span class="sr-only">Chat WhatsApp</span>
+          <span>Chat WhatsApp</span>
+        </a>
+        <button id="themeToggle" class="rounded-xl border px-3 py-2 hover:bg-zinc-100" aria-label="Toggle dark mode">🌓</button>
+      </div>
+      <button id="menuBtn" class="md:hidden rounded-xl border p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka menu">☰</button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-zinc-200">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 py-3 grid grid-cols-2 gap-2" aria-label="Menu Mobile">
+      <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 bg-accent/15 text-base">Beranda</a>
+<a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Koleksi</a>
+<a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Lookbook</a>
+<a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Tentang</a>
+<a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Testimoni</a>
+<a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Blog</a>
+<a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">FAQ</a>
+<a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Kontak</a>
+      <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="col-span-2 inline-flex items-center justify-center gap-2 rounded-xl bg-base text-white px-4 py-2">Chat WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<section class="relative">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 pt-12 pb-16 grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h1 class="font-serif text-4xl md:text-5xl text-base">Elegansi Sehari-hari oleh Nolima</h1>
+      <p class="mt-4 text-zinc-600">Koleksi pakaian yang memadukan desain klasik dan kenyamanan modern.</p>
+      <div class="mt-6 flex gap-3">
+        <a href="koleksi.html" class="rounded-xl bg-base text-white px-5 py-3">Lihat Koleksi</a>
+        <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="rounded-xl border border-base px-5 py-3">Chat WhatsApp</a>
+      </div>
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="rounded-2xl bg-white p-4 shadow-sm"><p class="font-semibold">Bahan Premium</p><p class="text-xs text-zinc-600 mt-1">Kualitas yang bisa kamu rasakan.</p></div><div class="rounded-2xl bg-white p-4 shadow-sm"><p class="font-semibold">Jahitan Presisi</p><p class="text-xs text-zinc-600 mt-1">Kualitas yang bisa kamu rasakan.</p></div><div class="rounded-2xl bg-white p-4 shadow-sm"><p class="font-semibold">Nyaman Dipakai</p><p class="text-xs text-zinc-600 mt-1">Kualitas yang bisa kamu rasakan.</p></div><div class="rounded-2xl bg-white p-4 shadow-sm"><p class="font-semibold">Garansi 7 Hari</p><p class="text-xs text-zinc-600 mt-1">Kualitas yang bisa kamu rasakan.</p></div>
+      </div>
+    </div>
+    <div class="relative">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1600&auto=format&fit=crop" alt="Look Nolima" loading="lazy" class="rounded-3xl shadow-xl">
+      <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-md hidden sm:block">
+        <p class="text-sm"><strong>Baru:</strong> Koleksi Musim Ini</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl px-4 sm:px-6 my-16">
+  <div class="flex items-end justify-between">
+    <h2 class="font-serif text-3xl">Koleksi Unggulan</h2>
+    <a href="koleksi.html" class="text-sm hover:underline">Lihat semua</a>
+  </div>
+  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <article class="group rounded-2xl bg-white shadow-sm overflow-hidden border relative">
+      <span class="absolute top-3 left-3 text-xs bg-accent/80 text-white px-2 py-1 rounded-full">Baru</span>
+      <a href="produk.html" aria-label="Detail Produk">
+        <img class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition" src="https://picsum.photos/seed/nolima0/600/750" alt="Produk 1">
+      </a>
+      <div class="p-4">
+        <h3 class="font-medium">Produk 1</h3>
+        <p class="text-sm text-zinc-600">Rp 199.000</p>
+        <div class="mt-3 flex gap-2">
+          <a href="produk.html" class="text-sm rounded-xl border px-3 py-2">Detail</a>
+          <a href="https://wa.me/62812XXXXXXX?text=Saya%20tertarik%20Produk%201%20Nolima" target="_blank" rel="noopener" class="text-sm rounded-xl bg-base text-white px-3 py-2">Chat WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="group rounded-2xl bg-white shadow-sm overflow-hidden border relative">
+      <span class="absolute top-3 left-3 text-xs bg-accent/80 text-white px-2 py-1 rounded-full">Terlaris</span>
+      <a href="produk.html" aria-label="Detail Produk">
+        <img class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition" src="https://picsum.photos/seed/nolima1/600/750" alt="Produk 2">
+      </a>
+      <div class="p-4">
+        <h3 class="font-medium">Produk 2</h3>
+        <p class="text-sm text-zinc-600">Rp 209.000</p>
+        <div class="mt-3 flex gap-2">
+          <a href="produk.html" class="text-sm rounded-xl border px-3 py-2">Detail</a>
+          <a href="https://wa.me/62812XXXXXXX?text=Saya%20tertarik%20Produk%202%20Nolima" target="_blank" rel="noopener" class="text-sm rounded-xl bg-base text-white px-3 py-2">Chat WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="group rounded-2xl bg-white shadow-sm overflow-hidden border relative">
+      <span class="absolute top-3 left-3 text-xs bg-accent/80 text-white px-2 py-1 rounded-full">Limited</span>
+      <a href="produk.html" aria-label="Detail Produk">
+        <img class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition" src="https://picsum.photos/seed/nolima2/600/750" alt="Produk 3">
+      </a>
+      <div class="p-4">
+        <h3 class="font-medium">Produk 3</h3>
+        <p class="text-sm text-zinc-600">Rp 219.000</p>
+        <div class="mt-3 flex gap-2">
+          <a href="produk.html" class="text-sm rounded-xl border px-3 py-2">Detail</a>
+          <a href="https://wa.me/62812XXXXXXX?text=Saya%20tertarik%20Produk%203%20Nolima" target="_blank" rel="noopener" class="text-sm rounded-xl bg-base text-white px-3 py-2">Chat WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="group rounded-2xl bg-white shadow-sm overflow-hidden border relative">
+      <span class="absolute top-3 left-3 text-xs bg-accent/80 text-white px-2 py-1 rounded-full">Baru</span>
+      <a href="produk.html" aria-label="Detail Produk">
+        <img class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition" src="https://picsum.photos/seed/nolima3/600/750" alt="Produk 4">
+      </a>
+      <div class="p-4">
+        <h3 class="font-medium">Produk 4</h3>
+        <p class="text-sm text-zinc-600">Rp 229.000</p>
+        <div class="mt-3 flex gap-2">
+          <a href="produk.html" class="text-sm rounded-xl border px-3 py-2">Detail</a>
+          <a href="https://wa.me/62812XXXXXXX?text=Saya%20tertarik%20Produk%204%20Nolima" target="_blank" rel="noopener" class="text-sm rounded-xl bg-base text-white px-3 py-2">Chat WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="group rounded-2xl bg-white shadow-sm overflow-hidden border relative">
+      <span class="absolute top-3 left-3 text-xs bg-accent/80 text-white px-2 py-1 rounded-full">Terlaris</span>
+      <a href="produk.html" aria-label="Detail Produk">
+        <img class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition" src="https://picsum.photos/seed/nolima4/600/750" alt="Produk 5">
+      </a>
+      <div class="p-4">
+        <h3 class="font-medium">Produk 5</h3>
+        <p class="text-sm text-zinc-600">Rp 239.000</p>
+        <div class="mt-3 flex gap-2">
+          <a href="produk.html" class="text-sm rounded-xl border px-3 py-2">Detail</a>
+          <a href="https://wa.me/62812XXXXXXX?text=Saya%20tertarik%20Produk%205%20Nolima" target="_blank" rel="noopener" class="text-sm rounded-xl bg-base text-white px-3 py-2">Chat WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="group rounded-2xl bg-white shadow-sm overflow-hidden border relative">
+      <span class="absolute top-3 left-3 text-xs bg-accent/80 text-white px-2 py-1 rounded-full">Limited</span>
+      <a href="produk.html" aria-label="Detail Produk">
+        <img class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition" src="https://picsum.photos/seed/nolima5/600/750" alt="Produk 6">
+      </a>
+      <div class="p-4">
+        <h3 class="font-medium">Produk 6</h3>
+        <p class="text-sm text-zinc-600">Rp 249.000</p>
+        <div class="mt-3 flex gap-2">
+          <a href="produk.html" class="text-sm rounded-xl border px-3 py-2">Detail</a>
+          <a href="https://wa.me/62812XXXXXXX?text=Saya%20tertarik%20Produk%206%20Nolima" target="_blank" rel="noopener" class="text-sm rounded-xl bg-base text-white px-3 py-2">Chat WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="group rounded-2xl bg-white shadow-sm overflow-hidden border relative">
+      <span class="absolute top-3 left-3 text-xs bg-accent/80 text-white px-2 py-1 rounded-full">Baru</span>
+      <a href="produk.html" aria-label="Detail Produk">
+        <img class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition" src="https://picsum.photos/seed/nolima6/600/750" alt="Produk 7">
+      </a>
+      <div class="p-4">
+        <h3 class="font-medium">Produk 7</h3>
+        <p class="text-sm text-zinc-600">Rp 259.000</p>
+        <div class="mt-3 flex gap-2">
+          <a href="produk.html" class="text-sm rounded-xl border px-3 py-2">Detail</a>
+          <a href="https://wa.me/62812XXXXXXX?text=Saya%20tertarik%20Produk%207%20Nolima" target="_blank" rel="noopener" class="text-sm rounded-xl bg-base text-white px-3 py-2">Chat WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="group rounded-2xl bg-white shadow-sm overflow-hidden border relative">
+      <span class="absolute top-3 left-3 text-xs bg-accent/80 text-white px-2 py-1 rounded-full">Terlaris</span>
+      <a href="produk.html" aria-label="Detail Produk">
+        <img class="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition" src="https://picsum.photos/seed/nolima7/600/750" alt="Produk 8">
+      </a>
+      <div class="p-4">
+        <h3 class="font-medium">Produk 8</h3>
+        <p class="text-sm text-zinc-600">Rp 269.000</p>
+        <div class="mt-3 flex gap-2">
+          <a href="produk.html" class="text-sm rounded-xl border px-3 py-2">Detail</a>
+          <a href="https://wa.me/62812XXXXXXX?text=Saya%20tertarik%20Produk%208%20Nolima" target="_blank" rel="noopener" class="text-sm rounded-xl bg-base text-white px-3 py-2">Chat WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl px-4 sm:px-6 my-16">
+  <h2 class="font-serif text-3xl">Lookbook</h2>
+  <div class="mt-6 grid sm:grid-cols-3 gap-4">
+    <button class="lookbox rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/look1/900/900" alt="Look 1" loading="lazy"></button><button class="lookbox rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/look2/900/900" alt="Look 2" loading="lazy"></button><button class="lookbox rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/look3/900/900" alt="Look 3" loading="lazy"></button><button class="lookbox rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/look4/900/900" alt="Look 4" loading="lazy"></button><button class="lookbox rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/look5/900/900" alt="Look 5" loading="lazy"></button><button class="lookbox rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/look6/900/900" alt="Look 6" loading="lazy"></button>
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl px-4 sm:px-6 my-16">
+  <h2 class="font-serif text-3xl">Testimoni</h2>
+  <div class="mt-6 grid md:grid-cols-3 gap-4">
+    <figure class="rounded-2xl bg-white p-5 shadow-sm"><blockquote>“Kualitasnya di atas ekspektasi. Cutting-nya rapi dan nyaman dipakai seharian.”</blockquote><figcaption class="mt-3 text-sm text-zinc-600">Alya, Jakarta</figcaption></figure><figure class="rounded-2xl bg-white p-5 shadow-sm"><blockquote>“Kualitasnya di atas ekspektasi. Cutting-nya rapi dan nyaman dipakai seharian.”</blockquote><figcaption class="mt-3 text-sm text-zinc-600">Alya, Jakarta</figcaption></figure><figure class="rounded-2xl bg-white p-5 shadow-sm"><blockquote>“Kualitasnya di atas ekspektasi. Cutting-nya rapi dan nyaman dipakai seharian.”</blockquote><figcaption class="mt-3 text-sm text-zinc-600">Alya, Jakarta</figcaption></figure>
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl px-4 sm:px-6 my-20">
+  <div class="rounded-3xl bg-base text-white p-8 md:p-12 flex items-center justify-between gap-6">
+    <div>
+      <h3 class="font-serif text-2xl">Butuh bantuan ukuran atau styling?</h3>
+      <p class="text-white/80">Tim kami siap bantu via WhatsApp.</p>
+    </div>
+    <a href="https://wa.me/62812XXXXXXX?text=Halo%20Nolima%2C%20saya%20ingin%20konsultasi%20ukuran" target="_blank" rel="noopener" class="rounded-xl bg-white text-base px-5 py-3">Chat WhatsApp</a>
+  </div>
+</section>
+
+<footer class="mt-24 border-t border-zinc-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-12 grid gap-8 md:grid-cols-4">
+    <div>
+      <div class="flex items-center gap-2">
+        <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
+        <span class="font-serif text-lg">Nolima</span>
+      </div>
+      <p class="mt-3 text-sm text-zinc-600">Elegansi yang Tahan Waktu.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2">Navigasi</h3>
+      <ul class="space-y-1 text-sm">
+        <li><a class="hover:underline" href="koleksi.html">Koleksi</a></li>
+        <li><a class="hover:underline" href="lookbook.html">Lookbook</a></li>
+        <li><a class="hover:underline" href="tentang.html">Tentang</a></li>
+        <li><a class="hover:underline" href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2">Sosial</h3>
+      <ul class="space-y-1 text-sm">
+        <li><a class="hover:underline" aria-label="Instagram" href="#">Instagram</a></li>
+        <li><a class="hover:underline" aria-label="TikTok" href="#">TikTok</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2">Newsletter</h3>
+      <form class="flex gap-2" onsubmit="event.preventDefault(); toast('Terima kasih!');">
+        <input type="email" aria-label="Email" placeholder="email@contoh.com" class="w-full rounded-xl border px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
+        <button class="rounded-xl bg-accent/90 px-3 py-2 text-white">Daftar</button>
+      </form>
+    </div>
+  </div>
+  <div class="text-center text-xs text-zinc-500 py-4 border-t">© <span id="year">2025</span> Nolima. Semua hak dilindungi.</div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" 
+  class="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+  aria-label="Chat WhatsApp">
+  ☎
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
