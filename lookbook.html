@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="id" data-theme="light">
 <head>
@@ -7,14 +6,16 @@
   <title>Lookbook — Nolima</title>
   <meta name="description" content="Editorial dan inspirasi gaya.">
   <link rel="icon" href="https://picsum.photos/seed/nolima-fav/64/64">
-  
-    <meta property="og:title" content="Lookbook — Nolima" />
-    <meta property="og:description" content="Editorial dan inspirasi gaya." />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Nolima" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1520975922284-7b6834f04a41?q=80&w=1200&auto=format&fit=crop" />
-    <meta name="twitter:card" content="summary_large_image">
-    
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Lookbook — Nolima" />
+  <meta property="og:description" content="Editorial dan inspirasi gaya." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nolima" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1520975922284-7b6834f04a41?q=80&w=1600&auto=format&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -23,133 +24,346 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            base: '#0E0E10',
-            accent: '#BFA27A',
-            neutral: '#F7F7F7'
-          },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            serif: ['Playfair Display', 'ui-serif']
-          }
+          colors: { base:'#0E0E10', accent:'#BFA27A', neutral:'#F7F7F7' },
+          fontFamily: { sans:['Inter','ui-sans-serif','system-ui'], serif:['Playfair Display','ui-serif'] },
+          boxShadow: { 'soft':'0 10px 30px -10px rgba(0,0,0,.15)' }
         }
       },
-      darkMode: ['class', '[data-theme="dark"]']
+      darkMode: ['class','[data-theme="dark"]']
     }
   </script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Nolima", "url": "https://example.com", "logo": "https://picsum.photos/seed/nolima/200/200", "sameAs": ["https://instagram.com/", "https://tiktok.com/"]}</script>
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Nolima",
+    "url":"https://example.com",
+    "logo":"https://picsum.photos/seed/nolima/200/200",
+    "sameAs":["https://instagram.com/","https://tiktok.com/"]
+  }</script>
+
+  <style>
+    .chip-active{ background:rgba(191,162,122,.18); border-color:rgba(191,162,122,.5); }
+    /* smooth column spacing fix */
+    .masonry > * { break-inside: avoid; }
+  </style>
 </head>
-<body class="bg-neutral text-base font-sans text-base/relaxed text-zinc-800 selection:bg-accent/20 selection:text-base">
 
-<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-zinc-200">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6">
-    <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-2" aria-label="Nolima Home">
-        <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
-        <span class="font-serif text-xl tracking-wide">Nolima</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-1" aria-label="Utama">
-        <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Beranda</a>
-<a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Koleksi</a>
-<a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 bg-accent/15 text-base">Lookbook</a>
-<a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Tentang</a>
-<a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Testimoni</a>
-<a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Blog</a>
-<a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">FAQ</a>
-<a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Kontak</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-base text-white px-4 py-2 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
-          <span class="sr-only">Chat WhatsApp</span>
-          <span>Chat WhatsApp</span>
+<body class="min-h-screen flex flex-col bg-neutral text-base font-sans text-base/relaxed text-zinc-800 selection:bg-accent/20 selection:text-base">
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-zinc-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Nolima Home">
+          <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
+          <span class="font-serif text-xl tracking-wide">Nolima</span>
         </a>
-        <button id="themeToggle" class="rounded-xl border px-3 py-2 hover:bg-zinc-100" aria-label="Toggle dark mode">🌓</button>
+        <nav class="hidden md:flex items-center gap-1" aria-label="Utama">
+          <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Beranda</a>
+          <a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Koleksi</a>
+          <a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium bg-accent/15 text-base">Lookbook</a>
+          <a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Tentang</a>
+          <a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Testimoni</a>
+          <a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Blog</a>
+          <a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">FAQ</a>
+          <a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Kontak</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-base text-white px-4 py-2 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
+            <span class="sr-only">Chat WhatsApp</span><span>Chat WhatsApp</span>
+          </a>
+          <button id="themeToggle" class="rounded-xl border px-3 py-2 hover:bg-zinc-100" aria-label="Toggle dark mode">🌓</button>
+        </div>
+        <button id="menuBtn" class="md:hidden rounded-xl border p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka menu">☰</button>
       </div>
-      <button id="menuBtn" class="md:hidden rounded-xl border p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka menu">☰</button>
     </div>
-  </div>
-  <div id="mobileMenu" class="md:hidden hidden border-t border-zinc-200">
-    <nav class="mx-auto max-w-7xl px-4 sm:px-6 py-3 grid grid-cols-2 gap-2" aria-label="Menu Mobile">
-      <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Beranda</a>
-<a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Koleksi</a>
-<a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 bg-accent/15 text-base">Lookbook</a>
-<a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Tentang</a>
-<a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Testimoni</a>
-<a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Blog</a>
-<a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">FAQ</a>
-<a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 hover:bg-zinc-100">Kontak</a>
-      <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="col-span-2 inline-flex items-center justify-center gap-2 rounded-xl bg-base text-white px-4 py-2">Chat WhatsApp</a>
-    </nav>
-  </div>
-</header>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-zinc-200">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 py-3 grid grid-cols-2 gap-2" aria-label="Menu Mobile">
+        <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Beranda</a>
+        <a href="koleksi.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Koleksi</a>
+        <a href="lookbook.html" class="px-3 py-2 rounded-xl text-sm font-medium bg-accent/15 text-base">Lookbook</a>
+        <a href="tentang.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Tentang</a>
+        <a href="testimoni.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Testimoni</a>
+        <a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Blog</a>
+        <a href="faq.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">FAQ</a>
+        <a href="kontak.html" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-zinc-100">Kontak</a>
+        <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" class="col-span-2 inline-flex items-center justify-center gap-2 rounded-xl bg-base text-white px-4 py-2">Chat WhatsApp</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="mx-auto max-w-7xl px-4 sm:px-6 mt-10">
-  <div class="flex items-center gap-3">
-    <span class="text-sm">Filter:</span>
-    <button class="chip rounded-full border px-3 py-1">Semua</button>
-    <button class="chip rounded-full border px-3 py-1">Casual</button>
-    <button class="chip rounded-full border px-3 py-1">Formal</button>
-    <button class="chip rounded-full border px-3 py-1">Workwear</button>
-  </div>
-  <div class="mt-6 columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
-    <button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed1/900/1100" alt="Editorial 1" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed2/900/1100" alt="Editorial 2" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed3/900/1100" alt="Editorial 3" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed4/900/1100" alt="Editorial 4" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed5/900/1100" alt="Editorial 5" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed6/900/1100" alt="Editorial 6" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed7/900/1100" alt="Editorial 7" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed8/900/1100" alt="Editorial 8" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed9/900/1100" alt="Editorial 9" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed10/900/1100" alt="Editorial 10" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed11/900/1100" alt="Editorial 11" loading="lazy"></button>
-<button class="lookbox mb-4 rounded-2xl overflow-hidden"><img src="https://picsum.photos/seed/ed12/900/1100" alt="Editorial 12" loading="lazy"></button>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="relative">
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=2000&auto=format&fit=crop" alt="Lookbook Nolima" class="h-[28vh] w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-7xl px-4 sm:px-6">
+      <nav class="text-white/80 text-xs mb-2" aria-label="breadcrumb">
+        <a href="index.html" class="hover:underline">Beranda</a> / <span>Lookbook</span>
+      </nav>
+      <h1 class="font-serif text-white text-3xl md:text-4xl drop-shadow">Lookbook</h1>
+      <p class="text-white/90 mt-1 max-w-2xl">Editorial pilihan untuk inspirasimu—elegan, minimal, dan mudah dipadu.</p>
+    </div>
+  </section>
 
-<footer class="mt-24 border-t border-zinc-200 bg-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-12 grid gap-8 md:grid-cols-4">
-    <div>
-      <div class="flex items-center gap-2">
-        <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
-        <span class="font-serif text-lg">Nolima</span>
+  <!-- Sticky filter bar -->
+  <div class="sticky top-16 z-40 bg-neutral/90 backdrop-blur border-b border-zinc-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-3 flex flex-wrap items-center gap-3">
+      <span class="text-sm">Filter:</span>
+      <button data-filter="all" class="chip rounded-full border px-3 py-1 chip-active">Semua</button>
+      <button data-filter="Casual" class="chip rounded-full border px-3 py-1">Casual</button>
+      <button data-filter="Formal" class="chip rounded-full border px-3 py-1">Formal</button>
+      <button data-filter="Workwear" class="chip rounded-full border px-3 py-1">Workwear</button>
+      <div class="ml-auto flex items-center gap-2">
+        <input id="searchLook" type="search" placeholder="Cari gaya..." class="rounded-xl border px-3 py-1.5 w-40 sm:w-56 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
+        <span id="count" class="text-xs text-zinc-600">12 foto</span>
       </div>
-      <p class="mt-3 text-sm text-zinc-600">Elegansi yang Tahan Waktu.</p>
-    </div>
-    <div>
-      <h3 class="font-semibold mb-2">Navigasi</h3>
-      <ul class="space-y-1 text-sm">
-        <li><a class="hover:underline" href="koleksi.html">Koleksi</a></li>
-        <li><a class="hover:underline" href="lookbook.html">Lookbook</a></li>
-        <li><a class="hover:underline" href="tentang.html">Tentang</a></li>
-        <li><a class="hover:underline" href="faq.html">FAQ</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-semibold mb-2">Sosial</h3>
-      <ul class="space-y-1 text-sm">
-        <li><a class="hover:underline" aria-label="Instagram" href="#">Instagram</a></li>
-        <li><a class="hover:underline" aria-label="TikTok" href="#">TikTok</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-semibold mb-2">Newsletter</h3>
-      <form class="flex gap-2" onsubmit="event.preventDefault(); toast('Terima kasih!');">
-        <input type="email" aria-label="Email" placeholder="email@contoh.com" class="w-full rounded-xl border px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
-        <button class="rounded-xl bg-accent/90 px-3 py-2 text-white">Daftar</button>
-      </form>
     </div>
   </div>
-  <div class="text-center text-xs text-zinc-500 py-4 border-t">© <span id="year">2025</span> Nolima. Semua hak dilindungi.</div>
-</footer>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima" target="_blank" rel="noopener" 
-  class="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
-  aria-label="Chat WhatsApp">
-  ☎
-</a>
+  <!-- GALLERY -->
+  <main class="flex-1">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 my-6">
+      <div id="gallery" class="masonry columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+        <!-- item card -->
+        <!-- Tambahkan data-category & data-caption untuk filter dan caption -->
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Casual" data-caption="Overshirt beige • Kaos putih" data-src="https://picsum.photos/seed/ed1/1200/1500">
+          <img src="https://picsum.photos/seed/ed1/600/750" alt="Editorial 1" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="pointer-events-none absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Overshirt beige • Kaos putih</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
 
-<script src="assets/js/main.js"></script>
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Formal" data-caption="Kemeja putih • Celana bahan hitam" data-src="https://picsum.photos/seed/ed2/1200/1500">
+          <img src="https://picsum.photos/seed/ed2/600/750" alt="Editorial 2" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Kemeja putih • Celana bahan hitam</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Workwear" data-caption="Outer hitam • Denim gelap" data-src="https://picsum.photos/seed/ed3/1200/1500">
+          <img src="https://picsum.photos/seed/ed3/600/750" alt="Editorial 3" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Outer hitam • Denim gelap</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <!-- 9 item tambahan (ubah seed agar unik) -->
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Casual" data-caption="Cardigan tipis • T-shirt" data-src="https://picsum.photos/seed/ed4/1200/1500">
+          <img src="https://picsum.photos/seed/ed4/600/750" alt="Editorial 4" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Cardigan tipis • T-shirt</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Formal" data-caption="Blazer • Kemeja satin" data-src="https://picsum.photos/seed/ed5/1200/1500">
+          <img src="https://picsum.photos/seed/ed5/600/750" alt="Editorial 5" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Blazer • Kemeja satin</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Workwear" data-caption="Shacket • Cargo tapered" data-src="https://picsum.photos/seed/ed6/1200/1500">
+          <img src="https://picsum.photos/seed/ed6/600/750" alt="Editorial 6" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Shacket • Cargo tapered</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Casual" data-caption="Kaos raglan • Chino" data-src="https://picsum.photos/seed/ed7/1200/1500">
+          <img src="https://picsum.photos/seed/ed7/600/750" alt="Editorial 7" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Kaos raglan • Chino</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Formal" data-caption="Kemeja pleat • Rok midi" data-src="https://picsum.photos/seed/ed8/1200/1500">
+          <img src="https://picsum.photos/seed/ed8/600/750" alt="Editorial 8" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Kemeja pleat • Rok midi</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Workwear" data-caption="Gilet • Wide pants" data-src="https://picsum.photos/seed/ed9/1200/1500">
+          <img src="https://picsum.photos/seed/ed9/600/750" alt="Editorial 9" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Gilet • Wide pants</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Casual" data-caption="Hoodie ringan • Jogger" data-src="https://picsum.photos/seed/ed10/1200/1500">
+          <img src="https://picsum.photos/seed/ed10/600/750" alt="Editorial 10" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Hoodie ringan • Jogger</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Formal" data-caption="Set monokrom" data-src="https://picsum.photos/seed/ed11/1200/1500">
+          <img src="https://picsum.photos/seed/ed11/600/750" alt="Editorial 11" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Set monokrom</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+
+        <button class="lb group mb-4 relative rounded-2xl overflow-hidden block" data-category="Workwear" data-caption="Shirt dress • Belt" data-src="https://picsum.photos/seed/ed12/1200/1500">
+          <img src="https://picsum.photos/seed/ed12/600/750" alt="Editorial 12" loading="lazy" class="w-full object-cover transition group-hover:scale-[1.02]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition">
+            <p class="text-sm">Shirt dress • Belt</p>
+            <a href="produk.html" class="text-xs underline bg-black/30 rounded px-2 py-1">Lihat Produk</a>
+          </div>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-12 grid gap-8 md:grid-cols-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex h-8 w-8 rounded-xl bg-accent/20 items-center justify-center text-base font-bold">N</span>
+          <span class="font-serif text-lg">Nolima</span>
+        </div>
+        <p class="mt-3 text-sm text-zinc-600">Elegansi yang Tahan Waktu.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Navigasi</h3>
+        <ul class="space-y-1 text-sm">
+          <li><a class="hover:underline" href="koleksi.html">Koleksi</a></li>
+          <li><a class="hover:underline" href="lookbook.html">Lookbook</a></li>
+          <li><a class="hover:underline" href="tentang.html">Tentang</a></li>
+          <li><a class="hover:underline" href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Sosial</h3>
+        <ul class="space-y-1 text-sm">
+          <li><a class="hover:underline" aria-label="Instagram" href="#">Instagram</a></li>
+          <li><a class="hover:underline" aria-label="TikTok" href="#">TikTok</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Newsletter</h3>
+        <form class="flex gap-2" onsubmit="event.preventDefault(); toast('Terima kasih!');">
+          <input type="email" aria-label="Email" placeholder="email@contoh.com" class="w-full rounded-xl border px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
+          <button class="rounded-xl bg-accent/90 px-3 py-2 text-white">Daftar</button>
+        </form>
+      </div>
+    </div>
+    <div class="text-center text-xs text-zinc-500 py-4 border-t">© <span id="year">2025</span> Nolima. Semua hak dilindungi.</div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/62812XXXXXXX?text=Halo%2C%20saya%20tertarik%20dengan%20Nolima"
+     target="_blank" rel="noopener"
+     class="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+     aria-label="Chat WhatsApp">☎</a>
+
+  <!-- Site interactions -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Filter chips
+    const chips = [...document.querySelectorAll('.chip')];
+    const cards = [...document.querySelectorAll('#gallery .lb')];
+    const count = document.getElementById('count');
+    const searchInput = document.getElementById('searchLook');
+
+    function applyFilter() {
+      const active = document.querySelector('.chip.chip-active')?.dataset.filter || 'all';
+      const q = (searchInput.value || '').toLowerCase().trim();
+      let visible = 0;
+      cards.forEach(c => {
+        const cat = c.dataset.category;
+        const cap = (c.dataset.caption || '').toLowerCase();
+        const okCat = active === 'all' || cat === active;
+        const okText = !q || cap.includes(q);
+        const show = okCat && okText;
+        c.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      count.textContent = visible + ' foto';
+    }
+    chips.forEach(b => b.addEventListener('click', () => {
+      chips.forEach(x => x.classList.remove('chip-active'));
+      b.classList.add('chip-active');
+      applyFilter();
+    }));
+    searchInput.addEventListener('input', applyFilter);
+    applyFilter();
+
+    // Lightbox fullscreen + keyboard nav
+    const imgs = cards.map(c => c.dataset.src);
+    let idx = -1;
+    function openLB(startSrc) {
+      idx = Math.max(0, imgs.indexOf(startSrc));
+      const overlay = document.createElement('div');
+      overlay.id = 'overlayLB';
+      overlay.className = 'fixed inset-0 bg-black/90 z-[70] flex items-center justify-center p-4';
+      overlay.innerHTML = `
+        <button id="lbClose" class="absolute top-4 right-4 text-white text-2xl" aria-label="Tutup">✕</button>
+        <button id="lbPrev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-2xl px-3 py-2">‹</button>
+        <figure class="max-w-5xl w-full">
+          <img id="lbImg" src="${imgs[idx]}" alt="Look" class="w-full rounded-2xl shadow-2xl">
+          <figcaption id="lbCap" class="text-white/80 mt-3 text-center text-sm"></figcaption>
+        </figure>
+        <button id="lbNext" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-2xl px-3 py-2">›</button>`;
+      document.body.appendChild(overlay);
+
+      function render() {
+        const curCard = cards.find(c => c.dataset.src === imgs[idx]);
+        document.getElementById('lbImg').src = imgs[idx];
+        document.getElementById('lbCap').textContent = curCard?.dataset.caption || '';
+      }
+      function close(){ overlay.remove(); document.removeEventListener('keydown', keynav); }
+      function prev(){ idx = (idx - 1 + imgs.length) % imgs.length; render(); }
+      function next(){ idx = (idx + 1) % imgs.length; render(); }
+      function keynav(e){
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') prev();
+        if (e.key === 'ArrowRight') next();
+      }
+      overlay.addEventListener('click', (e)=>{ if(e.target.id==='overlayLB') close(); });
+      document.getElementById('lbClose').addEventListener('click', close);
+      document.getElementById('lbPrev').addEventListener('click', prev);
+      document.getElementById('lbNext').addEventListener('click', next);
+      document.addEventListener('keydown', keynav);
+      render();
+    }
+    cards.forEach(c => c.addEventListener('click', () => openLB(c.dataset.src)));
+
+    // Back to top
+    const topBtn = document.createElement('button');
+    topBtn.className = 'fixed bottom-20 right-4 z-40 hidden rounded-full border bg-white/80 backdrop-blur px-3 py-2 shadow hover:bg-white';
+    topBtn.textContent = '↑ Ke atas';
+    topBtn.setAttribute('aria-label','Kembali ke atas');
+    document.body.appendChild(topBtn);
+    topBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+    window.addEventListener('scroll', ()=>{
+      topBtn.classList.toggle('hidden', window.scrollY < 300);
+    });
+  </script>
 </body>
 </html>
